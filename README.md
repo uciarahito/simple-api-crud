@@ -6,22 +6,22 @@
 
 # REST API
 
-##List of basic routes foods:
+### List of basic routes foods:
 
 | Routes | HTTP | Description |
 | --------------- | ------------- | --------------------------- |
 | /api/foods      | GET | Get all the foods |
-| /api/food/:id  | GET | Get a single foods |
+| /api/food/:id  | GET | Get a single food |
 | /api/foods      | POST | Create a food |
 | /api/food/:id  | DELETE | Delete a food |
 | /api/food/:id  | PUT | Update a food |
 
-##List of basic routes restaurants:
+### List of basic routes restaurants:
 
 | Routes | HTTP | Description |
 | --------------- | ------------- | --------------------------- |
 | /api/restaurants      | GET | Get all the restaurants |
-| /api/restaurant/:id  | GET | Get a single restaurants |
+| /api/restaurant/:id  | GET | Get a single restaurant |
 | /api/restaurants      | POST | Create a restaurant |
 | /api/restaurant/:id  | DELETE | Delete a restaurant |
 | /api/restaurant/:id  | PUT | Update a restaurant |
