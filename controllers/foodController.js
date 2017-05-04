@@ -2,7 +2,7 @@ var mongo = require('mongodb')
 var Food = require('../models/food')
 var methods = {}
 
-methods.insertOne = (req, res, next) => {
+methods.insertOne = (req, res) => {
     let food = new Food({
         name: req.body.name,
         price: req.body.price,
@@ -14,7 +14,7 @@ methods.insertOne = (req, res, next) => {
     });
 } // insertOne
 
-methods.getAll = (req, res, next) => {
+methods.getAll = (req, res) => {
     Food.find()
         .then(records => {
             res.json(records)
@@ -27,7 +27,7 @@ methods.getAll = (req, res, next) => {
         })
 } //getAll
 
-methods.getById = (req, res, next) => {
+methods.getById = (req, res) => {
     Food.findById(req.params.id)
         .then(record => {
             res.json(record)
@@ -40,7 +40,7 @@ methods.getById = (req, res, next) => {
         })
 } // getById
 
-methods.updateById = (req, res, next) => {
+methods.updateById = (req, res) => {
     Food.findById(req.params.id)
         .then(record => {
             Food.updateOne({
@@ -70,7 +70,7 @@ methods.updateById = (req, res, next) => {
         })
 } //updateById
 
-methods.deleteById = (req, res, next) => {
+methods.deleteById = (req, res) => {
     Food.deleteOne({
             "_id": new mongo.ObjectID(req.params.id)
         })

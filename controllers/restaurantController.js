@@ -2,7 +2,7 @@ var mongo = require('mongodb')
 var Restaurant = require('../models/restaurant')
 var methods = {}
 
-methods.insertOne = (req, res, next) => {
+methods.insertOne = (req, res) => {
     let restaurant = new Restaurant({
         name: req.body.name,
         owner: req.body.owner,
@@ -15,7 +15,7 @@ methods.insertOne = (req, res, next) => {
     });
 } // insertOne
 
-methods.getAll = (req, res, next) => {
+methods.getAll = (req, res) => {
     Restaurant.find()
         .then(records => {
             res.json(records)
@@ -28,7 +28,7 @@ methods.getAll = (req, res, next) => {
         })
 } //getAll
 
-methods.getById = (req, res, next) => {
+methods.getById = (req, res) => {
     Restaurant.findById(req.params.id)
         .then(record => {
             res.json(record)
@@ -41,7 +41,7 @@ methods.getById = (req, res, next) => {
         })
 } // getById
 
-methods.updateById = (req, res, next) => {
+methods.updateById = (req, res) => {
     Restaurant.findById(req.params.id)
         .then(record => {
             Restaurant.updateOne({
@@ -72,7 +72,7 @@ methods.updateById = (req, res, next) => {
         })
 } //updateById
 
-methods.deleteById = (req, res, next) => {
+methods.deleteById = (req, res) => {
     Restaurant.deleteOne({
             "_id": new mongo.ObjectID(req.params.id)
         })
